@@ -7,7 +7,7 @@ public class SomeNode : ComplexSequenceNode<Agent> {
 
   public override IEnumerable<BehaviourNode<Agent>> GetChilds() {
   
-    yield return new WaitNode<BehaviourTreeTests>(1);
+    yield return new WaitNode<Agent>(1);
     
     // A second has passed
     
@@ -35,7 +35,7 @@ public class SomeNode : ComplexSequenceNode<Agent> {
 
 ## Features
 
-This is a library that allows you to create complex behaviour tree with ease. Nothing particularly fancy, it just gets the job done.
+This is a library that allows you to create complex behaviour trees with ease. Nothing particularly fancy, it just gets the job done.
 
 If you want a lesson on how behaviour trees work, check [this article out](https://www.gamasutra.com/blogs/ChrisSimpson/20140717/221339/Behavior_trees_for_AI_How_they_work.php). We don't use the exact same  language but the principles are the same and they explain behaviour trees very well.
 
@@ -74,7 +74,7 @@ class YourTree : BehaviourTree<BehaviourTreeTests> {
 
 ## Create your own node
 
-Most 'structural node' (sequences, selectors, decorators..) are provided with the library so you'll only have to implement leaf nodes: the nodes that make your agent perfom actions.
+Most 'structural nodes' (sequences, selectors, decorators..) are provided with the library so you'll only have to implement leaf nodes: the nodes that make your agent perfom actions.
 
 To create your own node, you just need to create a class that implements ```BehaviourNode```:
 
@@ -163,7 +163,7 @@ public class SomeNode : ComplexSequenceNode<Agent> {
 
 *SequenceNode*
 
-A classic sequence. Simply executes all of it's children (specified in the constructor). If one of them returns a FAILURE, it returns a FAILURE, otherwise it returns a SUCCESS.
+A classic sequence. Simply executes all of it's children (specified in the constructor). If one of them returns a FAILURE, it returns a FAILURE, otherwise it returns a SUCCESS once all children have returned.
 
 
 ```C#
