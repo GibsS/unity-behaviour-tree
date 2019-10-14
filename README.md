@@ -38,16 +38,15 @@ public class SomeNode : ComplexSequenceNode<Agent> {
 This is a library that allows the creation of complex behaviour trees in code with ease. Nothing particularly fancy, it just gets the job done.
 
 To create an AI, make a class that inherit ```BehaviourTree``` and specify the RootNode. From there you just have to make a tree out of
-the existing nodes or you custom nodes. See below for a list of the base nodes. The behaviour tree will execute the root node in a loop until you stopp it 
+the existing nodes or your custom nodes. See below for a list of the base nodes. The behaviour tree will execute the root node in a loop until you stop it.
 
-One of the 'innovation' of this library is the use of C# IEnumerable function syntax to write complex sequences. Traditional behaviour tree just let you
-write sequences and you have to mess around with selectors to make anything more complicated. With this library you can do stuff like the example above.
+One of the 'innovation' of this library is the use of C# IEnumerable function syntax to write complex sequences (I haven't seen anywhere else at least..). Traditional behaviour tree just let you write sequences and you have to mess around with selectors to make anything more complicated. With this library you can do stuff like the example above.
 
-Neat right? It allows you to keep your behaviour trees a bit lighter than traditional behaviour trees.
+Neat right? It allows you to keep your behaviour trees a bit lighter and readable than traditional behaviour trees.
 
 ## Nodes
 
 *ComplexSequenceNode*
 
-This is the main type of node you'll use the most, it allows to specify a 'dynamic' list of child nodes
+This is the main type of node you'll use the most, it allows to specify a 'dynamic' list of child nodes.
 
