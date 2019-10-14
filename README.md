@@ -1,4 +1,4 @@
-# unity-behaviour-tree
+# Unity Behaviour Tree
 
 A convenient library to make behaviour trees in Unity3D
 
