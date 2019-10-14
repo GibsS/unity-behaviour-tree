@@ -64,9 +64,9 @@ public class YourAgent : MonoBehaviour {
   }
 }
 
-class YourTree : BehaviourTree<BehaviourTreeTests> {
+class YourTree : BehaviourTree<YourAgent> {
 
-    protected override BehaviourNode<BehaviourTreeTests> GetRootNode() {
+    protected override BehaviourNode<YourAgent> GetRootNode() {
         return new YourRootNode();
     }
 }
@@ -85,6 +85,7 @@ public class YourNode : BehaviourNode<Agent> {
   public State Start() {
     return State.IN_PROGRESS;
   }
+  
   // Called every frame while the node is active
   public State Update() {
     // DO STUFF HERE
@@ -141,7 +142,7 @@ public class SomeNode : ComplexSequenceNode<Agent> {
 
   public override IEnumerable<BehaviourNode<Agent>> GetChilds() {
   
-    yield return new WaitNode<BehaviourTreeTests>(1);
+    yield return new WaitNode<Agent>(1);
     
     // A second has passed
     
